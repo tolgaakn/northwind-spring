@@ -15,6 +15,7 @@ import myproject.northwind.core.utilities.results.SuccessDataResult;
 import myproject.northwind.core.utilities.results.SuccessResult;
 import myproject.northwind.dataAccess.abstracts.ProductDao;
 import myproject.northwind.entities.concretes.Product;
+import myproject.northwind.entities.dtos.ProductWithCategoryDto;
 
 @Service //Bu class projede servis görevi görecek.
 public class ProductManager implements ProductService {
@@ -93,6 +94,12 @@ public class ProductManager implements ProductService {
 	public DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId) {
 		
 		return new SuccessDataResult<List<Product>>(this.productDao.getByNameAndCategory(productName, categoryId), "Data listelendi.");
+	}
+
+	@Override
+	public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails() {
+		
+		return new SuccessDataResult<List<ProductWithCategoryDto>>(this.productDao.getProductWithCategoryDetails(), "Data listelendi.");
 	}
 
 }
