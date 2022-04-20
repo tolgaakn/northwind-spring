@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 public class ProductWithCategoryDto {
 
 	private int id;
-	private String productName;
+	private String productNme;
 	private String categoryName;
 }
